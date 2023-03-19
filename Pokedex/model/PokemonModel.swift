@@ -15,6 +15,11 @@ struct Pokemon: Codable,Identifiable, Equatable{
     let id = UUID()
     var name: String
     var url: String
+    
+    static func example() -> Pokemon {
+            return Pokemon(name: "bulbasaur",
+                          url: "https://pokeapi.co/api/v2/pokemon-form/1/")
+    }
 }
 
 struct PokemonDetail: Codable, Identifiable{
@@ -23,3 +28,5 @@ struct PokemonDetail: Codable, Identifiable{
     var height: Int
     var weight: Int
 }
+
+

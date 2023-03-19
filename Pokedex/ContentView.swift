@@ -13,7 +13,7 @@ struct ContentView: View {
         if pokemonFetcher.isLoading{
             LoadingView()
         }else if pokemonFetcher.errorMessage != nil{
-            ErrorView(pokemonFetcher: pokemonFetcher)
+            ErrorView(vm: PokemonFetcher())
         }else{
             PokemonListView()
         }

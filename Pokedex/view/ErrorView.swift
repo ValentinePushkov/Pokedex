@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ErrorView: View {
-    @ObservedObject var pokemonFetcher: PokemonFetcher
+    @ObservedObject var vm: PokemonFetcher
     var body: some View {
         VStack {
                 
                 Text("😿")
                     .font(.system(size: 80))
                 
-                Text(pokemonFetcher.errorMessage ?? "")
+                Text(vm.errorMessage ?? "")
                 
-                /*Button {
-                    pokemonFetcher.fetchAllBreeds()
+                Button {
+                    vm.fetchAllPokemons()
                 } label: {
                     Text("Try again")
-                }*/
+                }
 
                 
             }
@@ -30,6 +30,6 @@ struct ErrorView: View {
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(pokemonFetcher: PokemonFetcher())
+        ErrorView(vm: PokemonFetcher())
     }
 }

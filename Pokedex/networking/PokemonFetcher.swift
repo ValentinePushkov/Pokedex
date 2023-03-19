@@ -15,7 +15,10 @@ class PokemonFetcher: ObservableObject{
     @Published var isLoading: Bool = false
     @Published var dataIsLoaded: Bool = false
     
-    init(){
+    let service: APIServiceProtocol
+    
+    init(service: APIServiceProtocol = APIService()){
+        self.service = service
         fetchAllPokemons()
     }
     
@@ -25,7 +28,6 @@ class PokemonFetcher: ObservableObject{
                errorMessage = nil
                
                let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=151")
-               let service = APIService()
                service.fetchPokemons(url: url) { [unowned self] result in
                    
                    DispatchQueue.main.async {

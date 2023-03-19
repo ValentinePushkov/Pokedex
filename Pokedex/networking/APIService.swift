@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIService{
+struct APIService: APIServiceProtocol{
 
     func fetchPokemons(url: URL?, completion: @escaping(Result<[Pokemon], APIError>) -> Void) {
         guard let url = url else {
