@@ -31,7 +31,6 @@ class PokemonFetcher: ObservableObject{
                service.fetchPokemons(url: url) { [unowned self] result in
                    
                    DispatchQueue.main.async {
-                       
                        self.isLoading = false
                        switch result {
                        case .failure(let error):
