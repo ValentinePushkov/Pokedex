@@ -30,8 +30,9 @@ struct PokemonRowView: View {
                     .shadow(radius: 10)
                     
                     Text("\(pokemon.name.capitalized)")
-                        .font(.system(size: 16, weight: .regular, design: .monospaced))
+                        .font(.system(size: 20, weight: .regular, design: .monospaced))
                         .padding(.bottom, 20)
+                        .foregroundColor(.blue)
                 }
             }
     }

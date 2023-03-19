@@ -23,9 +23,9 @@ struct PokemonListView: View {
                             label: {
                                 PokemonRowView(pokemon: pokemon)
                             })
-                       }
+                    }.padding(.top, 20)
                    }
-                   .listStyle(PlainListStyle())
+                   //.listStyle(PlainListStyle())
                 .navigationTitle("Pokedex")
                 .navigationBarTitleDisplayMode(.inline)
         }
