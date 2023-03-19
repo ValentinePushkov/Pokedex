@@ -9,18 +9,27 @@ import SwiftUI
 
 struct PokemonListView: View {
     @StateObject var vm = PokemonFetcher()
+    private let adaptiveColumns = [
+            GridItem(.adaptive(minimum: 150))
+        ]
+    
     var body: some View {
         NavigationView {
-                   List {
+            ScrollView{
+                LazyVGrid(columns: adaptiveColumns, spacing: 10) {
                     ForEach(vm.pokemons) { pokemon in
                         NavigationLink(
                             destination: PokemonDetailView(pokemon: pokemon),
                             label: {
-                                Text(pokemon.name)
+                                PokemonRowView(pokemon: pokemon)
                             })
                        }
                    }
                    .listStyle(PlainListStyle())
+                .navigationTitle("Pokedex")
+                .navigationBarTitleDisplayMode(.inline)
+        }
+        
         }
         .environmentObject(vm)
   }
