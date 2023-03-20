@@ -56,7 +56,7 @@ class PokemonFetcher: ObservableObject{
     }
     
     func getDetails(pokemon:Pokemon){
-        self.pokemonDetails = PokemonDetail(id: 0, name: "nope", height: 0, weight: 0)
+        self.pokemonDetails = PokemonDetail(id: 0, name: "nope", height: 0, weight: 0, types: [PokemonType.example()])
         isLoading = true
         errorMessage = nil
 
@@ -70,9 +70,9 @@ class PokemonFetcher: ObservableObject{
                     self.errorMessage = error.localizedDescription
                     // print(error.description)
                     print(error)
-                case .success(let pokemonDeatails):
-                    print("--- sucess with \(pokemonDeatails.weight)")
-                    self.pokemonDetails = pokemonDeatails
+                case .success(let pokemonDetails):
+                    print("--- sucess with \(pokemonDetails.weight)")
+                    self.pokemonDetails = pokemonDetails
                     self.dataIsLoaded = true
                 }
             }
