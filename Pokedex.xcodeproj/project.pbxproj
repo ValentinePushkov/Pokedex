@@ -22,6 +22,13 @@
 		CA10F52D29C63229006CAB92 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10F52C29C63229006CAB92 /* APIService.swift */; };
 		CA10F52F29C63B15006CAB92 /* PokemonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10F52E29C63B15006CAB92 /* PokemonRowView.swift */; };
 		CA10F53129C651DA006CAB92 /* PokemonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA10F53029C651DA006CAB92 /* PokemonDetailView.swift */; };
+		CA7E9F9429C882FF0099FA85 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CA7E9F9329C882FF0099FA85 /* Realm */; };
+		CA7E9F9629C882FF0099FA85 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA7E9F9529C882FF0099FA85 /* RealmSwift */; };
+		CA7E9F9829C883260099FA85 /* LocalPokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7E9F9729C883260099FA85 /* LocalPokemonModel.swift */; };
+		CA7E9F9B29C8841A0099FA85 /* LocalPokemonFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7E9F9A29C8841A0099FA85 /* LocalPokemonFetcher.swift */; };
+		CA7E9F9D29C894570099FA85 /* LocalPokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7E9F9C29C894570099FA85 /* LocalPokemonListView.swift */; };
+		CA7E9F9F29C8953C0099FA85 /* LocalPokemonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7E9F9E29C8953C0099FA85 /* LocalPokemonRowView.swift */; };
+		CA7E9FA129C895DA0099FA85 /* LocalPokemonDetailVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7E9FA029C895DA0099FA85 /* LocalPokemonDetailVIew.swift */; };
 		CAA4C04129C7593900CB8B98 /* APIMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA4C04029C7593900CB8B98 /* APIMockService.swift */; };
 		CAA4C04329C759A600CB8B98 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA4C04229C759A600CB8B98 /* APIServiceProtocol.swift */; };
 		CAFFF07B29C7318A009DC8B1 /* SBPAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = CAFFF07A29C7318A009DC8B1 /* SBPAsyncImage */; };
@@ -66,6 +73,11 @@
 		CA10F52C29C63229006CAB92 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		CA10F52E29C63B15006CAB92 /* PokemonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRowView.swift; sourceTree = "<group>"; };
 		CA10F53029C651DA006CAB92 /* PokemonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailView.swift; sourceTree = "<group>"; };
+		CA7E9F9729C883260099FA85 /* LocalPokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPokemonModel.swift; sourceTree = "<group>"; };
+		CA7E9F9A29C8841A0099FA85 /* LocalPokemonFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPokemonFetcher.swift; sourceTree = "<group>"; };
+		CA7E9F9C29C894570099FA85 /* LocalPokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPokemonListView.swift; sourceTree = "<group>"; };
+		CA7E9F9E29C8953C0099FA85 /* LocalPokemonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPokemonRowView.swift; sourceTree = "<group>"; };
+		CA7E9FA029C895DA0099FA85 /* LocalPokemonDetailVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPokemonDetailVIew.swift; sourceTree = "<group>"; };
 		CAA4C04029C7593900CB8B98 /* APIMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMockService.swift; sourceTree = "<group>"; };
 		CAA4C04229C759A600CB8B98 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA7E9F9629C882FF0099FA85 /* RealmSwift in Frameworks */,
+				CA7E9F9429C882FF0099FA85 /* Realm in Frameworks */,
 				CAFFF07B29C7318A009DC8B1 /* SBPAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +133,7 @@
 		CA10F4F129C61693006CAB92 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				CA7E9F9929C883CE0099FA85 /* realm */,
 				CA10F51F29C619A5006CAB92 /* view */,
 				CA10F51E29C61999006CAB92 /* networking */,
 				CA10F51D29C61991006CAB92 /* model */,
@@ -161,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				CA10F52029C61A93006CAB92 /* PokemonModel.swift */,
+				CA7E9F9729C883260099FA85 /* LocalPokemonModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -185,8 +201,19 @@
 				CA10F52829C620BC006CAB92 /* LoadingView.swift */,
 				CA10F52E29C63B15006CAB92 /* PokemonRowView.swift */,
 				CA10F53029C651DA006CAB92 /* PokemonDetailView.swift */,
+				CA7E9F9C29C894570099FA85 /* LocalPokemonListView.swift */,
+				CA7E9F9E29C8953C0099FA85 /* LocalPokemonRowView.swift */,
+				CA7E9FA029C895DA0099FA85 /* LocalPokemonDetailVIew.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		CA7E9F9929C883CE0099FA85 /* realm */ = {
+			isa = PBXGroup;
+			children = (
+				CA7E9F9A29C8841A0099FA85 /* LocalPokemonFetcher.swift */,
+			);
+			path = realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +234,8 @@
 			name = Pokedex;
 			packageProductDependencies = (
 				CAFFF07A29C7318A009DC8B1 /* SBPAsyncImage */,
+				CA7E9F9329C882FF0099FA85 /* Realm */,
+				CA7E9F9529C882FF0099FA85 /* RealmSwift */,
 			);
 			productName = Pokedex;
 			productReference = CA10F4EF29C61693006CAB92 /* Pokedex.app */;
@@ -281,6 +310,7 @@
 			mainGroup = CA10F4E629C61693006CAB92;
 			packageReferences = (
 				CAFFF07929C7318A009DC8B1 /* XCRemoteSwiftPackageReference "SBPAsyncImage" */,
+				CA7E9F9229C882FF0099FA85 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = CA10F4F029C61693006CAB92 /* Products */;
 			projectDirPath = "";
@@ -324,19 +354,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA7E9F9D29C894570099FA85 /* LocalPokemonListView.swift in Sources */,
 				CA10F52529C62084006CAB92 /* PokemonListView.swift in Sources */,
 				CA10F52F29C63B15006CAB92 /* PokemonRowView.swift in Sources */,
 				CA10F52729C6209E006CAB92 /* ErrorView.swift in Sources */,
+				CA7E9F9F29C8953C0099FA85 /* LocalPokemonRowView.swift in Sources */,
 				CAA4C04329C759A600CB8B98 /* APIServiceProtocol.swift in Sources */,
 				CA10F4F529C61693006CAB92 /* ContentView.swift in Sources */,
 				CAA4C04129C7593900CB8B98 /* APIMockService.swift in Sources */,
 				CA10F52329C61C1E006CAB92 /* PokemonFetcher.swift in Sources */,
+				CA7E9FA129C895DA0099FA85 /* LocalPokemonDetailVIew.swift in Sources */,
 				CA10F53129C651DA006CAB92 /* PokemonDetailView.swift in Sources */,
 				CA10F52129C61A93006CAB92 /* PokemonModel.swift in Sources */,
+				CA7E9F9B29C8841A0099FA85 /* LocalPokemonFetcher.swift in Sources */,
 				CA10F52B29C62FA7006CAB92 /* APIError.swift in Sources */,
 				CA10F52929C620BC006CAB92 /* LoadingView.swift in Sources */,
 				CA10F52D29C63229006CAB92 /* APIService.swift in Sources */,
 				CA10F4F329C61693006CAB92 /* PokedexApp.swift in Sources */,
+				CA7E9F9829C883260099FA85 /* LocalPokemonModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +687,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CA7E9F9229C882FF0099FA85 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.25.2;
+			};
+		};
 		CAFFF07929C7318A009DC8B1 /* XCRemoteSwiftPackageReference "SBPAsyncImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yutailang0119/SBPAsyncImage";
@@ -663,6 +706,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CA7E9F9329C882FF0099FA85 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA7E9F9229C882FF0099FA85 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		CA7E9F9529C882FF0099FA85 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA7E9F9229C882FF0099FA85 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		CAFFF07A29C7318A009DC8B1 /* SBPAsyncImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CAFFF07929C7318A009DC8B1 /* XCRemoteSwiftPackageReference "SBPAsyncImage" */;
