@@ -10,21 +10,28 @@ import SwiftUI
 struct ErrorView: View {
     @ObservedObject var vm: PokemonFetcher
     var body: some View {
-        VStack {
-                
-                Text("😿")
-                    .font(.system(size: 80))
-                
-                Text(vm.errorMessage ?? "")
-                
-                Button {
-                    vm.fetchAllPokemons()
-                } label: {
-                    Text("Try again")
+        NavigationView{
+            VStack {
+                    
+                    Text("❌")
+                        .font(.system(size: 80))
+                    
+                    Text(vm.errorMessage ?? "")
+                HStack{
+                    Button {
+                        vm.fetchAllPokemons()
+                    } label: {
+                        Text("Try again")
+                    }
+                    
+                    NavigationLink(destination: LocalPokemonListView(),
+                    label: {
+                        Text("Go Offline").padding()
+                    })
                 }
-
-                
-            }
+   
+                }
+        }
     }
 }
 

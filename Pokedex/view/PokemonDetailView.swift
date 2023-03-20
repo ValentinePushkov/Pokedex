@@ -15,7 +15,7 @@ struct PokemonDetailView: View {
         LazyVStack{
             if vm.dataIsLoaded{
                 PokemonRowView(pokemon: pokemon)
-            
+                
                 VStack(spacing: 10){
                     Text("ID: \(vm.pokemonDetails?.id ?? 0)")
                         .font(.system(size: 16, weight: .regular, design: .monospaced))
@@ -33,7 +33,6 @@ struct PokemonDetailView: View {
             }
         }.onAppear(perform: {
             self.vm.getDetails(pokemon: pokemon)
-            
         })
     }
 }
