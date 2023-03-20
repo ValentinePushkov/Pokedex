@@ -29,6 +29,18 @@ struct PokemonDetailView: View {
                         .font(.system(size: 16, weight: .regular, design: .monospaced))
                         .padding(.bottom, 20)
                         .foregroundColor(.blue)
+                    HStack{
+                        Text("Type:")
+                            .font(.system(size: 16, weight: .regular, design: .monospaced))
+                            .padding(.bottom, 20)
+                            .foregroundColor(.blue)
+                        ForEach(vm.pokemonDetails?.types ?? [PokemonType.example()]){ type in
+                            Text("\(type.type.name)")
+                                .font(.system(size: 16, weight: .regular, design: .monospaced))
+                                .padding(.bottom, 20)
+                                .foregroundColor(.blue)
+                        }
+                    }
                 }
             }
         }.onAppear(perform: {
@@ -39,6 +51,6 @@ struct PokemonDetailView: View {
 
 struct PokemonDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonDetailView(pokemon: Pokemon(name: "", url:"")).environmentObject(PokemonFetcher())
+        PokemonDetailView(pokemon: Pokemon(name: "", url:"") ).environmentObject(PokemonFetcher())
     }
 }
