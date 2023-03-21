@@ -9,5 +9,6 @@ import Foundation
 
 protocol APIServiceProtocol {
     func fetchPokemons(url: URL?, completion: @escaping(Result<[Pokemon], APIError>) -> Void)
+    func fetchPokemonDetails(url: URL?, completion: @escaping(Result<PokemonDetail, APIError>) -> Void)
 }
 
