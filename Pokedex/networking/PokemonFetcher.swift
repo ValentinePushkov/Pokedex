@@ -59,9 +59,7 @@ class PokemonFetcher: ObservableObject{
         self.pokemonDetails = PokemonDetail(id: 0, name: "nope", height: 0, weight: 0, types: [PokemonType.example()])
         isLoading = true
         errorMessage = nil
-
         let url = URL(string: pokemon.url)
-        let service = APIService()
         service.fetchPokemonDetails(url: url) { [unowned self] result in
             DispatchQueue.main.async {
                 self.isLoading = false
