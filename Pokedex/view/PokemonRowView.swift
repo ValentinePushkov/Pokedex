@@ -9,12 +9,12 @@ import SwiftUI
 import SBPAsyncImage
 
 struct PokemonRowView: View {
-    @EnvironmentObject var vm: PokemonFetcher
+    @EnvironmentObject var pokemonFethcer: PokemonFetcher
     let pokemon: Pokemon
     let dimensions: CGFloat = 140
     var body: some View {
         VStack {
-            BackportAsyncImage(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(vm.getPokemonID(pokemon: pokemon)).png")) { image in
+            BackportAsyncImage(url: URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(pokemonFethcer.getPokemonID(pokemon: pokemon)).png")) { image in
                 if let image = image {
                     image
                         .resizable()

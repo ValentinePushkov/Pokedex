@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocalPokemonListView: View {
-    @StateObject var vm = PokemonFetcher()
+    @StateObject var pokemonFetcher = PokemonFetcher()
     @StateObject var localPokemonFetcher = LocalPokemonFetcher()
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 150))
@@ -17,7 +17,7 @@ struct LocalPokemonListView: View {
         NavigationView {
             VStack{
                 Button {
-                    vm.fetchAllPokemons()
+                    pokemonFetcher.fetchAllPokemons()
                 } label: {
                     Text("Go online")
                 }

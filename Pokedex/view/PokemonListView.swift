@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PokemonListView: View {
-    @StateObject var vm = PokemonFetcher()
+    @StateObject var pokemonFetcher = PokemonFetcher()
     @StateObject var localPokemonFetcher = LocalPokemonFetcher()
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 150))
@@ -17,9 +17,9 @@ struct PokemonListView: View {
     var body: some View {
         NavigationView {
             ScrollView{
-                if vm.dataIsLoaded{
+                if pokemonFetcher.dataIsLoaded{
                     LazyVGrid(columns: adaptiveColumns, spacing: 10) {
-                        ForEach(vm.pokemons) { pokemon in
+                        ForEach(pokemonFetcher.pokemons) { pokemon in
                             NavigationLink(
                                 destination: PokemonDetailView(pokemon: pokemon),
                                 label: {
@@ -30,24 +30,12 @@ struct PokemonListView: View {
                     .navigationTitle("Pokedex")
                     .navigationBarTitleDisplayMode(.inline)
                     .onAppear(perform: {
-                        if !vm.dataIsSaved{
-                            for pokemon in vm.pokemons{
-                                print(pokemon.name)
-
-                                localPokemonFetcher.save(pokemon: pokemon)
-                            }
-                            vm.dataIsSaved = true
-                        }
-                        localPokemonFetcher.render()
-                        for pokemon in localPokemonFetcher.localPokemons{
-                            print(pokemon.name)
-                        }
-                        
+                        localPokemonFetcher.saveAndRender(localPokemonFetcher: localPokemonFetcher, pokemonFetcher: pokemonFetcher)
                     })
                 }
             }
         }
-        .environmentObject(vm)
+        .environmentObject(pokemonFetcher)
     }
 }
 
