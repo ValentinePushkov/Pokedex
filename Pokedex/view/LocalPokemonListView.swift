@@ -27,7 +27,7 @@ struct LocalPokemonListView: View {
                     LazyVGrid(columns: adaptiveColumns, spacing: 10) {
                         ForEach(localPokemonFetcher.localPokemons) { pokemon in
                             NavigationLink(
-                                destination: LocalPokemonDetailVIew(pokemon: pokemon),
+                                destination: LocalPokemonDetailView(pokemon: pokemon),
                                 label: {
                                     LocalPokemonRowView(pokemon: pokemon)
                                 })
